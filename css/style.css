@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  min-width: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.audio {
+  background-image: url(../assets/img/som.png);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-size: cover;
+}
+
+h1 {
+  font-family: "Georama", sans-serif;
+  font-size: 40px;
+  color: #fff;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.glass {
+  width: 350px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: absolute;
+  top: 11%;
+  display: none;
+  flex-direction: column;
+}
+
+.glass > h2,
+.glass > h3,
+.glass > p,
+.glass > span {
+  margin: 25px;
+  text-align: center;
+  font-family: "Georama", sans-serif;
+  color: #0a105a;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../assets/img/estadio.jpg);
+  background-size: cover;
+  min-width: 360px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../assets/img/campo.jpg);
+  border: 2px solid #fff;
+  background-size: 100% 100%;
+  background-position: center;
+  border-radius: 25px;
+  box-shadow: 10px 10px 43px 0px rgba(255, 255, 255, 0.75);
+}
+
+.linha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bloco {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin: 1px;
+  background-color: rgba(255, 255, 255, 0.514);
+  background-size: cover;
+  cursor: pointer;
+}
+
+.peca {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  animation: maior 2s ease-in-out;
+}
+
+.cardVitoria {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: no-repeat url(../assets/img/background.jpg) center;
+  background-size: cover;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  animation: surgeVencedor 1s ease forwards;
+}
+
+@keyframes surgeVencedor {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes maior {
+  0% {
+    transform: scale(0.1);
+  }
+  50% {
+    transform: scale(1.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.jogadores {
+  display: flex;
+  margin: 50px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.jogador {
+  background-image: url(../assets/img/escudo-fluminense.png);
+  background-size: cover;
+}
+
+.jogadores div {
+  width: 100px;
+  height: 100px;
+}
+
+.chutar {
+  animation: mover 1s linear;
+}
+
+@keyframes mover {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translateY(-200px);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-100px);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translateY(30px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.cronometro {
+  color: #fff;
+  font-family: "Georama", sans-serif;
+  font-size: 25px;
+}
+
+.cardVitoria {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: no-repeat url(../assets/img/background.jpg);
+  background-size: cover;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  background-position: bottom;
+}
+
+.criarTitulo,
+.reiniciar,
+.criaVencedor {
+  color: rgb(229, 255, 0);
+  font-size: 40px;
+  font-weight: 700;
+  text-shadow: 2px 2px rgb(143, 41, 41);
+  text-align: center;
+}
+
+.criaTrofeu {
+  background: no-repeat url(../assets/img/trofeu.png) rgba(255, 255, 255, 0.25);
+  background-size: contain;
+  width: 120px;
+  height: 140px;
+  margin: 32px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.reiniciar {
+  margin: 32px 0;
+  background-color: #66a6ff;
+  background-image: url(../assets/img/Futebol-Bola-de-Futebol.png);
+  background-size: cover;
+  border-radius: 39px;
+  font-size: 20px;
+  width: 81px;
+  height: 81px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.fogos-artificios {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+.cardInicial {
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/img/estadio.jpg);
+  background-size: cover;
+  background-position: bottom;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 600px;
+}
+
+#titulo {
+  color: gold;
+  text-shadow: 2px 2px black;
+  font-size: 40px;
+}
+
+#trofeu {
+  width: 70px;
+  height: 70px;
+}
+
+.criarTimes {
+  width: 184px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#time1 {
+  width: 50px;
+  height: 50px;
+}
+
+#versus {
+  width: 50px;
+  height: 50px;
+}
+
+#time2 {
+  width: 50px;
+  height: 50px;
+}
+
+.botoesIniciais {
+  background-image: url(../assets/img/Futebol-Bola-de-Futebol.png);
+  background-size: cover;
+  border-radius: 39px;
+  width: 81px;
+  height: 81px;
+  color: rgb(229, 255, 0);
+  font-size: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px rgb(143, 41, 41);
+  cursor: pointer;
+}
+
+#regras {
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/img/estadio.jpg);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#regrasEscritas {
+  width: 265px;
+  height: 500px;
+  background-color: white;
+  opacity: 0.8;
+  font-size: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#botaoFechar {
+  margin-top: 20px;
+  width: 64px;
+  height: 32px;
+}
+
+#equipe {
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/img/estadio.jpg);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#equipeEscritas {
+  width: 265px;
+  height: 500px;
+  background-color: white;
+  opacity: 0.8;
+  font-size: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#equipeContainer {
+  width: 265px;
+  height: 500px;
+  background-color: white;
+  opacity: 0.8;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#criarDivImg {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#criarDivImg img {
+  width: 40px;
+  height: 40px;
+}
+
+@media (min-width: 800px) {
+  header {
+    min-width: 700px;
+  }
+  .btn {
+    top: 3.5%;
+    right: 23%;
+  }
+  .glass {
+    width: 750px;
+    height: 560px;
+    top: 6.5%;
+  }
+
+  .glass > h2 {
+    font-size: 40px;
+  }
+  .glass > h3 {
+    font-size: 30px;
+  }
+  .glass > span {
+    font-size: 30px;
+  }
+  .glass > p {
+    font-size: 25px;
+  }
+  .bloco {
+    width: 80px;
+    height: 80px;
+    margin: 5px 10px 5px 10px;
+  }
+
+  #trofeu {
+    width: 100px;
+    height: 100px;
+  }
+
+  #time1 {
+    width: 80px;
+    height: 80px;
+  }
+
+  #versus {
+    width: 80px;
+    height: 80px;
+  }
+
+  #time2 {
+    width: 80px;
+    height: 80px;
+  }
+}
